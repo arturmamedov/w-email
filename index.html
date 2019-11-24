@@ -1,0 +1,305 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <title>w-email | Send email trough InCMS API</title>
+    <meta content="A package for send emails trough InCMS API that do it trough SMTP and collect all data also in Multi Tenant way" name="description">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- @html5bp <link rel="manifest" href="site.webmanifest">-->
+    <!-- @html5bp <link rel="apple-touch-icon" href="icon.png">-->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Style with that withFront works -->
+    <link href="node_modules/withfront/dist/css/libraries.min.css" rel="stylesheet"> <!-- grunt cssmin:libraries | for conf -->
+    <!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> yet in dist/css/libraries.min.css
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"> yet in dist/css/libraries.min.css -->
+    <!-- end# Style with that withFront works -->
+
+    <!-- This theme style -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- w-front (withFront) tools -->
+    <link href="node_modules/withfront/dist/css/w-style.min.css" rel="stylesheet">
+</head>
+<body data-desc="height: 2000px for try go2top button" style="height:2000px;">
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please
+    <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<div class="wrapper">
+
+    <section class="contact-section qua_section qua_image_bck qua_fixed" id="the_form" style="backgorund-image: url('https://insuperadmin.buonsito.net/assets/media/tenant_26/contact-bg.jpg');">
+
+        <div class="container">
+            <h2>Richiedi un preventivo</h2>
+
+            <div class="row">
+                <form class="w-email children_age_form w-cookie-form contact-form"
+                    action=""
+                    method="POST"
+                    >
+                    <input name="lang_code" type="hidden" value="it" data-w-email="lang_code">
+
+                    <div class="form-group">
+                        <div class="row contact-form__container">
+                            <div class="col-lg-4 contact-form__column">
+                                <div class="contact-form__input-wrapper">
+                                    <div class="contact-form__input-wrapper-header">
+                                        <h5>I tuoi dati</h5>
+                                    </div>
+
+                                    <div class="form-col form-col--name">
+                                        <div class="book_item">
+                                            <label for="contact-form-name">Nome *</label>
+                                            <div class="input-container">
+                                                <i class="fas fa-user icon"></i>
+                                                <input id="contact-form-name" name="first_name" type="text" data-w-email="first_name" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-col form-col--surname">
+                                        <div class="book_item">
+                                            <label for="contact-form-surname">Cognome</label>
+                                            <div class="input-container">
+                                                <i class="far fa-user icon"></i>
+                                                <input id="contact-form-surname" name="last_name" type="text" data-w-email="last_name">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-col form-col--phone">
+                                        <div class="book_item">
+                                            <label for="contact-form-phone">Telefono</label>
+                                            <div class="input-container">
+                                                <i class="fas fa-phone icon"></i>
+                                                <input id="contact-form-phone" name="_form[extra][telephone]" type="text" data-w-email="telephone">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-col form-col--email">
+                                        <div class="book_item">
+                                            <label for="contact-form-email">Email *</label>
+                                            <div class="input-container">
+                                                <i class="fas fa-envelope icon"></i>
+                                                <input id="contact-form-email" name="email" required
+                                                        type="email" data-w-email="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-4 contact-form__column period">
+                                <div class="contact-form__input-wrapper">
+                                    <div class="contact-form__input-wrapper-header">
+                                        <h5>Il tuo soggiorno</h5>
+                                    </div>
+
+                                    <div class="form-col form-col--arrive">
+                                        <div class="book_item">
+                                            <label for="contact-form-arrive">Arrivo *</label>
+                                            <div class="input-container">
+                                                <i class="far fa-calendar-check icon"></i>
+                                                <input class="range checkin" id="contact-form-arrive" name="checkin" type="text" data-w-email="checkin" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-col form-col--departure">
+                                        <div class="book_item">
+                                            <label for="contact-form-arrive">Partenza *</label>
+                                            <div class="input-container">
+                                                <i class="far fa-calendar-times icon"></i>
+                                                <input class="range checkout" id="contact-form-departure" name="checkout" type="text"  data-w-email="checkout" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-col form-col--adults">
+                                        <div class="book_item">
+                                            <label for="contact-form-adults">Adulti *</label>
+                                            <div class="input-container">
+                                                <i class="fas fa-users icon"></i>
+                                                <input id="contact-form-adults" max="10" min="1" name="adults" type="number" data-w-email="adults" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-col form-col--childs">
+                                        <div class="book_item">
+                                            <label for="contact-form-childs">Bambini</label>
+                                            <div class="input-container">
+                                                <i class="fas fa-child icon"></i>
+                                                <input class="child_num_input" id="contact-form-childs" max="3" min="0" name="children"
+                                                        type="number" data-w-email="children">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-4 contact-form__column">
+                                <div class="contact-form__input-wrapper">
+                                    <div class="contact-form__input-wrapper-header">
+                                        <h5>Trattamento e richieste</h5>
+                                    </div>
+
+                                    <div class="form-col form-col--reservation-type">
+                                        <div class="book_item">
+                                            <label for="contact-form-type">Sistemazione</label>
+
+                                            <div class="input-group input-group-lg">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" style="background: #218d96; border: none; border-radius: 0; color: white;">
+                                                        <i class="fas fa-bed"></i>
+                                                    </span>
+                                                </div>
+
+                                                <select class="form-control" id="contact-form-type" name="room">
+                                                    <option>Scegli l'opzione...</option>
+                                                    <option>Camera singola</option>
+                                                    <option>Camera doppia</option>
+                                                    <option>Camera matrimoniale</option>
+                                                    <option>Matrimoniale + 1 letto</option>
+                                                    <option>Matrimoniale + 2 letti</option>
+                                                    <option>Matrimoniale + 3 letti</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-col form-col--reservation-type">
+                                        <div class="book_item">
+                                            <label for="contact-form-reservation-type">Trattamento</label>
+
+                                            <div class="input-group input-group-lg">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" style="background: #218d96; border: none; border-radius: 0; color: white;">
+                                                        <i class="fas fa-umbrella-beach"></i>
+                                                    </span>
+                                                </div>
+
+                                                <select class="form-control" id="contact-form-reservation-type" name="accomodation">
+                                                    <option>Scegli l'opzione...</option>
+                                                    <option>All inclusive</option>
+                                                    <option>Pensione completa</option>
+                                                    <option>Mezza pensione</option>
+                                                    <option>B&amp;B</option>
+                                                    <option>Solo pernottamento</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-col form-col--msg">
+                                        <div class="book_item">
+                                            <label for="message">Messaggio</label>
+
+                                            <div class="input-group input-group-lg">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" style="background: #218d96; border: none; border-radius: 0; color: white;">
+                                                        <i class="fas fa-comment-alt"></i>
+                                                    </span>
+                                                </div>
+
+                                                <textarea class="form-control" id="message" name="_form[extra][message]" required rows="4" data-w-email="message"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="book_item form-col--privacy">
+                                        <input class="form-check-input" id="privacy" required type="checkbox" value="">
+                                        <label class="form-check-label" for="privacy">
+                                            Acconsento al trattamento dei dati forniti per le finalità indicate dall\'informativa sulla
+
+                                            <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+                                        </label>
+                                    </div>
+
+
+                                    <div class="form-col form-col--action">
+                                        <div class="book_item text-center">
+                                            <button class="btn btn-white submit" type="submit">Richiedi preventivo</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="w-error alert alert-danger text-center display-none">
+
+                                </div>
+                                <div class="w-success alert alert-success text-center display-none">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="row mt-200">
+        <code>
+            <pre class="w-json">
+
+            </pre>
+        </code>
+    </div>
+</div>
+
+
+<!-- @html5bp <script src="js/vendor/modernizr-3.6.0.min.js"></script>-->
+<script crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="node_modules/jquery/dist/jquery.min.js"><\/script>')</script>
+
+<!-- Plugin with that withFront works -->
+<script src="node_modules/withfront/dist/js/libraries.min.js"></script> <!-- grunt uglify:libraries | for conf -->
+<!-- Bs Date Picker https://github.com/uxsolutions/bootstrap-datepicker -->
+<!--<link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css"/> yet in dist/css/libraries.min.css
+<script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> yet in dist/js/libraries.min.js -->
+<script data-lang="it" id="bsdp_lang_code" src="node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.it.min.js"></script>
+
+<!-- js-cookie https://github.com/js-cookie/js-cookie -->
+<!--<script src="node_modules/js-cookie/src/js.cookie.js"></script> yet in dist/js/libraries.min.js -->
+
+<!-- Nicescroll https://github.com/inuyaksa/jquery.nicescroll -->
+<!--<script src="node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script> yet in dist/js/libraries.min.js -->
+<!-- end# Plugin with that withFront works -->
+
+<!-- w-email (withEmail) -->
+<script src="js/w-email.js"></script>
+
+<script>
+    // Configure wOptions for override withOptions: debug:false, wAppearBottomButton:false, go2top:true
+
+    // enable wAppearBottomButton cause it disabled by default
+    var wOptions = {
+        debug: true, // enable/disable Debug mode [defaule:false]
+        wAppearBottomButton: true, // enable/disable widget/w-appear_btn.js [defaule:false]
+        go2top: true, // enable/disable widget/w-go2top.js [defaule:true]
+        htmlNicescroll: true, // [defaule:false]
+        whatsappWeb: true, // replace WhatsApp mobile with Desktop on Desktop [defaule:true]
+    }
+</script>
+<script src="node_modules/withfront/dist/js/w-plugins.min.js"></script>
+
+<!-- @html5bp <script src="js/plugins.js"></script> for custom js -->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<!-- @html5bp <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+</script>-->
+<!-- @html5bp <script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
+</body>
+</html>

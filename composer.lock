@@ -1,0 +1,46 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "30233aa60bbaf155a5b57563bc27e6a0",
+    "packages": [
+        {
+            "name": "arturmamedov/w-api",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arturmamedov/w-api.git",
+                "reference": "4bf08d2d97b178700267956492b067c4049f46e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arturmamedov/w-api/zipball/4bf08d2d97b178700267956492b067c4049f46e1",
+                "reference": "4bf08d2d97b178700267956492b067c4049f46e1",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Artur Mamedov",
+                    "email": "arturmamedov1993@gmail.com"
+                }
+            ],
+            "description": "Simple PHP Class for call an REST API endpoint and get JSON data with CURL",
+            "time": "2019-10-03T09:46:01+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
