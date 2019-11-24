@@ -3,7 +3,7 @@ $root = dirname(__DIR__);
 $ds = DIRECTORY_SEPARATOR;
 
 require_once 'api'.$ds.'api.php';
-require_once $root.$ds.'config'.$ds.'autoconfig.php';
+require_once $root.$ds.'config'.$ds.'config.php';
 
 //$id = rawurlencode($_POST['id']);
 $lang = (isset($_POST['lang_code'])) ? $_POST['lang_code'] : 'it';

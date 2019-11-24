@@ -42,18 +42,6 @@ $(function () {
         // #Email API v01 - https://documenter.getpostman.com/view/2926391/RVtvqDNH
         var _formData = getData(_Form, _formType);
 
-        var age_children = _Form.find('.childrenage');
-        if (age_children.length) {
-            var age = [];
-            age_children.each(function () {
-                if ($(this).val().length) {
-                    age.push($(this).val());
-                }
-            });
-            _formData.children = age.length;
-            _formData.children_age = age.toString();
-        }
-
         $.ajax({
             method: _method,
             url: _action,
@@ -81,7 +69,7 @@ $(function () {
                     }
 
                     _Form.find('.w-success').show().html('<h3>' + json.message + '</h3><h1 class="text-center"><i class="fa fa-check fa-5x text-success"></i></h1>', 1500);
-                    $('.on-target').css('background-color', '#00e095');
+                    $('.on-target').css('background-color', '#00E095');
                     // setTimeout(function(){
                     //   $('.on-target').css('background-color', 'transparent');
                     // }, 8000);
@@ -107,7 +95,7 @@ $(function () {
 
                     // show errors on form
                     for (err in json.errors) {
-                        _Form.find('[name="'+err+'"]').parent()
+                        _Form.find('[name="' + err + '"]').parent()
                             .after('<span class="help-block alert alert-danger">' + json.errors[err] + '</span>')
                             .addClass('has-error');
                     }
@@ -198,6 +186,18 @@ $(function () {
                         // @todo: custom extra with a for loop on extra[whatever] input attr
                     }
                 };
+
+                /*var children_age = _Form.find('input[name="children_age[]"]');
+                if (children_age.length) {
+                    var age = [];
+                    children_age.each(function () {
+                        if ($(this).val().length) {
+                            age.push($(this).val());
+                        }
+                    });
+                    _formData.children = age.length;
+                    _formData.children_age = _formData + '&' + age.toString();
+                }*/
                 break;
             case 'data':
                 var _formData = {
@@ -232,6 +232,17 @@ $(function () {
                     }
                 };
 
+                /*var children_age = _Form.find('input[name="children_age[]"]');
+                if (children_age.length) {
+                    var age = [];
+                    children_age.each(function () {
+                        if ($(this).val().length) {
+                            age.push($(this).val());
+                        }
+                    });
+                    _formData.children = age.length;
+                    _formData.children_age = _formData + '&' + age.toString();
+                }*/
                 break;
             default:
                 var _formData = _Form.serialize();

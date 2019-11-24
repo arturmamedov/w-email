@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * This must be an auto configurator for take env() or config()
+ * of CakePHP or Laravel application and set it automatically
+ * but for the moment i not finish to develop it, so use config.php
+ */
 require 'config.php';
 
 try {
@@ -30,7 +34,7 @@ try {
     if (strstr($_SERVER['HTTP_ACCEPT'], 'application/json') ||
         strstr($_SERVER['HTTP_ACCEPT'], 'text/javascript') ||
         (isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
-        strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'))
+            strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'))
     {
         echo json_encode([
             'message' => $exception->getMessage(),
