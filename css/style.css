@@ -267,7 +267,9 @@
     font-weight: normal; }
 .contact-section .contact-form input[type="checkbox"],
 .contact-section .contact-form input[type="radio"] {
-    display: none; }
+    opacity: 0;
+    position: absolute;
+}
 .contact-section .contact-form input[type="checkbox"] + label[for],
 .contact-section .contact-form input[type="radio"] + label[for] {
     display: block;
