@@ -1,6 +1,7 @@
 /**
- * wEmail (withEmail) - Send emails trough API
+ * wEmail v0.x (withEmail) - Send emails trough API
  * https://documenter.getpostman.com/view/2926391/RVu7D833
+ * inpired by: https://github.com/arturmamedov/w-email
  *
  * .w-email (class to add on form)
  * data-ga-send-pageview="/email-form-contatti" (data-api for define Google Analytics Event, not set it: for disable)
@@ -53,16 +54,31 @@ $(function () {
 
                 if (json.success) {
                     // Google Analytics track
-                    if (typeof ga !== "undefined" && typeof _Form.data('gaSendPageview') != 'undefined') {
-                        ga('send', 'pageview', _Form.data('gaSendPageview'));
+                    clog('check for ga');
+                    if (typeof ga !== "undefined" && typeof _Form.data('gaSendPageview') != 'off') {
+                        var gaSend = _Form.data('gaSendPageview').length ? _Form.data('gaSendPageview') : '/email-form-contatti';
+                        ga('send', 'pageview', gaSend);
+
+                        clog('ga send pageview: ' + _Form.data('gaSendPageview'))
                     }
+
+                    // Facebook track (custom of this installation)
+                    clog('check fbq');
+                    if (typeof fbq !== "undefined" && typeof _Form.data('fbqLead') != 'off') {
+                        var fbqLead = _Form.data('fbqLead').length ? _Form.data('fbqLead') : 'Lead';
+                        fbq('track', fbqLead);
+
+                        clog('fbq track: '+ fbqLead);
+                    }
+
+                    // Old Google analytics _gaq _trackPageview
                     if (typeof _gaq !== "undefined" && typeof _Form.data('gaqTrackPageview') != 'undefined') {
                         _gaq.push(['_trackPageview', _Form.data('gaqTrackPageview')]);
                     }
 
                     if (json.message.length) {
                         if (typeof withAlert == 'function') {
-                            withAlert(json.message, 'success');
+                            withAlert(json.message, 'success', { hidetime: 15000 });
                         } else {
                             alert(json.message);
                         }
@@ -75,8 +91,10 @@ $(function () {
                     // }, 8000);
 
                     _Form.find(".range").val('');
-                    wCookies().remove('date_in');
-                    wCookies().remove('date_out');
+                    if (typeof wCookies == 'function') {
+                        wCookies().remove('date_in');
+                        wCookies().remove('date_out');
+                    }
                 } else {
                     // create general error if not set
                     if (typeof json.message == 'undefined' || json.message.length == 0) {
