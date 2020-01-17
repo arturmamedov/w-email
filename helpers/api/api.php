@@ -41,6 +41,20 @@ class wApi
     public $format = 'json';
 
     /**
+     * Default locale for request's
+     *
+     * @var string
+     */
+    public $locale = 'it';
+
+    /**
+     * Configured Tenant User, for recognize api calls
+     *
+     * @var string
+     */
+    public $tenant = 'w-email-default';
+
+    /**
      *  Decode returned json data.
      */
     public $decode_json = true;
@@ -67,9 +81,10 @@ class wApi
      * @param $consumer_password Password of API consumer
      *
      */
-    function __construct($consumer_name, $consumer_password)
+    function __construct($consumer_name, $consumer_password, $tenant = null)
     {
         $this->auth = 'Authorization: '.$consumer_name.' '.$consumer_password;
+        $this->tenant = $tenant ?: $this->tenant;
 
         // if host not set, set it with the self http host
         if (empty($this->host)) {
@@ -111,6 +126,11 @@ class wApi
         $headers[] = $this->auth;
         $headers[] = "Accept: application/json, text/javascript";
         $headers[] = "X-Requested-With: XMLHttpRequest"; // if its a Ajax Request
+        // set locale
+        $this->locale = isset($options['locale']) ? $options['locale'] : $this->locale;
+        $headers[] = "X-Lang: {$this->locale}";
+        $headers[] = "X-Tenant: {$this->tenant}";
+
 
         // Curl settings
         //curl_setopt($ci, CURLOPT_USERAGENT, $this->useragent);
