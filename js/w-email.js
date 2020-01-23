@@ -23,6 +23,9 @@
  * @dependencies jquery[, w-alert(optional)], [font-awesome(opt)]]
  **/
 $(function () {
+    // w-honey_pot.js - withHoneyPot Spam Checker
+    $("._the_email_confirm_").attr('value', '');
+
     $(".w-email").submit(function (e) {
         e.preventDefault();
 
@@ -54,21 +57,29 @@ $(function () {
 
                 if (json.success) {
                     // Google Analytics track
-                    clog('check for ga');
-                    if (typeof ga !== "undefined" && typeof _Form.data('gaSendPageview') != 'off') {
-                        var gaSend = _Form.data('gaSendPageview').length ? _Form.data('gaSendPageview') : '/email-form-contatti';
+                    if (typeof clog == 'function') {
+                        clog('check for ga');
+                    }
+                    if (typeof ga !== "undefined" && _Form.data('gaSendPageview') != 'off') {
+                        var gaSend = (typeof _Form.data('gaSendPageview') != 'undefined') ? _Form.data('gaSendPageview') : '/email-form-contatti';
                         ga('send', 'pageview', gaSend);
 
-                        clog('ga send pageview: ' + _Form.data('gaSendPageview'))
+                        if (typeof clog == 'function') {
+                            clog('ga send pageview: ' + _Form.data('gaSendPageview'))
+                        }
                     }
 
                     // Facebook track (custom of this installation)
-                    clog('check fbq');
-                    if (typeof fbq !== "undefined" && typeof _Form.data('fbqLead') != 'off') {
-                        var fbqLead = _Form.data('fbqLead').length ? _Form.data('fbqLead') : 'Lead';
+                    if (typeof clog == 'function') {
+                        clog('check fbq');
+                    }
+                    if (typeof fbq !== "undefined" && _Form.data('fbqLead') != 'off') {
+                        var fbqLead = (typeof _Form.data('fbqLead') != 'undefined') ? _Form.data('fbqLead') : 'Lead';
                         fbq('track', fbqLead);
 
-                        clog('fbq track: '+ fbqLead);
+                        if (typeof clog == 'function') {
+                            clog('fbq track: ' + fbqLead);
+                        }
                     }
 
                     // Old Google analytics _gaq _trackPageview
@@ -78,7 +89,7 @@ $(function () {
 
                     if (json.message.length) {
                         if (typeof withAlert == 'function') {
-                            withAlert(json.message, 'success', { hidetime: 15000 });
+                            withAlert(json.message, 'success');
                         } else {
                             alert(json.message);
                         }
@@ -91,10 +102,6 @@ $(function () {
                     // }, 8000);
 
                     _Form.find(".range").val('');
-                    if (typeof wCookies == 'function') {
-                        wCookies().remove('date_in');
-                        wCookies().remove('date_out');
-                    }
                 } else {
                     // create general error if not set
                     if (typeof json.message == 'undefined' || json.message.length == 0) {
