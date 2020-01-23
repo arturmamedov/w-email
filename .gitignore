@@ -1,3 +1,6 @@
+## Repo ignored files
+/config/config.php
+
 # A collection of .gitignore templates
 # https://github.com/github/gitignore
 
