@@ -1,3 +1,8 @@
+/* for use see https://github.com/arturmamedov/withFront/blob/master/js/form/w-honey_pot.js */
+._the_email_confirm_group {
+    display: none !important;
+}
+
 .contact-section {
     /* &::after {
       content: '';

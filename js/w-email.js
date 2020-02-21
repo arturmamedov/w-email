@@ -1,7 +1,7 @@
 /**
  * wEmail v0.x (withEmail) - Send emails trough API
- * https://documenter.getpostman.com/view/2926391/RVu7D833
- * inpired by: https://github.com/arturmamedov/w-email
+ * https://documenter.getpostman.com/view/2926391/SWTG7wD8
+ * inpired by: https://github.com/arturmamedov/withFront/js/form/w-ajaxsend.js
  *
  * .w-email (class to add on form)
  * data-ga-send-pageview="/email-form-contatti" (data-api for define Google Analytics Event, not set it: for disable)
@@ -23,7 +23,8 @@
  * @dependencies jquery[, w-alert(optional)], [font-awesome(opt)]]
  **/
 $(function () {
-    // w-honey_pot.js - withHoneyPot Spam Checker
+    // w-honey_pot.js - withHoneyPot Spam Checker https://github.com/arturmamedov/withFront/blob/master/js/form/w-honey_pot.js
+    $("._the_email_confirm_group").hide(); // or by CSS add ( ._the_email_confirm_group { display: none !important; } )
     $("._the_email_confirm_").attr('value', '');
 
     $(".w-email").submit(function (e) {
@@ -42,6 +43,7 @@ $(function () {
         // errors
         $('input, select, textarea').parent().removeClass('has-error').find('.help-block').remove();
         _Form.find('.w-error, .w-success').hide();
+        $('.w-email-alert').remove();
 
         // #Email API v01 - https://documenter.getpostman.com/view/2926391/RVtvqDNH
         var _formData = getData(_Form, _formType);
@@ -113,7 +115,7 @@ $(function () {
 
                     // show error message
                     if (typeof withAlert == 'function') {
-                        withAlert(json.message, 'danger', {autohide: false});
+                        withAlert(json.message, 'danger w-email-alert', {autohide: false});
                     } else {
                         alert(json.message);
                     }
@@ -136,7 +138,7 @@ $(function () {
 
                 // show error message
                 if (typeof withAlert == 'function') {
-                    withAlert('Unexpected error! Errore inaspettato! :( ', 'danger', {autohide: false});
+                    withAlert('Unexpected error! Errore inaspettato! :( ', 'danger w-email-alert', {autohide: false});
                 } else {
                     alert('Unexpected error! Errore inaspettato! :( ');
                 }
