@@ -1,7 +1,9 @@
 ### w-email (withEmail)
 
-Send Email's trough w-cms API
+[see Demo for more](https://arturmamedov.github.io/w-email/)
 
+
+Send Email's trough w-cms API
 
 Field | Input name="" | data-w-email="" | Default 
 ------|---------------|-----------------|---------
