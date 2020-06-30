@@ -32,7 +32,7 @@ $(function () {
 
         var _Form = $(this),
             _formType = _Form.attr('data-w-form-type') || 'serialize',
-            _action = _Form.attr('action') || 'helpers/form_request.php',
+            _action = _Form.attr('action') || '/node_modules/withemail/helpers/form_request.php',
             _method = _Form.attr('method') || 'POST';
 
 
