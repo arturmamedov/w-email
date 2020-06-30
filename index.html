@@ -30,229 +30,417 @@
 <![endif]-->
 
 <div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Contact Form</h1>
+            </div>
 
-    <section class="contact-section qua_section qua_image_bck qua_fixed" id="the_form" style="backgorund-image: url('https://insuperadmin.buonsito.net/assets/media/tenant_26/contact-bg.jpg');">
-
-        <div class="container">
-            <h2>Richiedi un preventivo</h2>
-
-            <div class="row">
-                <form class="w-email children_age_form w-cookie-form contact-form"
-                    action=""
+            <section class="contact-section">
+                <form action=""
+                    class="w-email children_age_form w-cookie-form contact-form"
                     method="POST"
-                    >
-                    <input name="lang_code" type="hidden" value="it" data-w-email="lang_code">
+            >
+                <input data-w-email="lang_code" name="lang_code" type="hidden" value="it">
 
-                    <div class="form-group">
-                        <div class="row contact-form__container">
-                            <div class="col-lg-4 contact-form__column">
-                                <div class="contact-form__input-wrapper">
-                                    <div class="contact-form__input-wrapper-header">
-                                        <h5>I tuoi dati</h5>
-                                    </div>
+                <div class="form-group">
+                    <div class="row contact-form__container">
+                        <div class="col-lg-4 contact-form__column">
+                            <div class="contact-form__input-wrapper">
+                                <div class="contact-form__input-wrapper-header">
+                                    <h5>I tuoi dati</h5>
+                                </div>
 
-                                    <div class="form-col form-col--name">
-                                        <div class="book_item">
-                                            <label for="contact-form-name">Nome *</label>
-                                            <div class="input-container">
-                                                <i class="fas fa-user icon"></i>
-                                                <input id="contact-form-name" name="first_name" type="text" data-w-email="first_name" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-col form-col--surname">
-                                        <div class="book_item">
-                                            <label for="contact-form-surname">Cognome</label>
-                                            <div class="input-container">
-                                                <i class="far fa-user icon"></i>
-                                                <input id="contact-form-surname" name="last_name" type="text" data-w-email="last_name">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-col form-col--phone">
-                                        <div class="book_item">
-                                            <label for="contact-form-phone">Telefono</label>
-                                            <div class="input-container">
-                                                <i class="fas fa-phone icon"></i>
-                                                <input id="contact-form-phone" name="_form[extra][telephone]" type="text" data-w-email="telephone">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-col form-col--email">
-                                        <div class="book_item">
-                                            <label for="contact-form-email">Email *</label>
-                                            <div class="input-container">
-                                                <i class="fas fa-envelope icon"></i>
-                                                <input id="contact-form-email" name="email" required
-                                                        type="email" data-w-email="email">
-                                            </div>
-                                        </div>
-
-                                        <div class="_the_email_confirm_group">
-                                            <div class="form-group">
-                                                <label class="upper" for="name">Email confirm</label>
-                                                <input type="text" class="_the_email_confirm_" name="_the_email_confirm_" value="confirmed" />
-                                            </div>
+                                <div class="form-col form-col--name">
+                                    <div class="book_item">
+                                        <label for="contact-form-name">Nome *</label>
+                                        <div class="input-container">
+                                            <i class="fas fa-user icon"></i>
+                                            <input data-w-email="first_name" id="contact-form-name" name="first_name" required type="text">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-
-                            <div class="col-lg-4 contact-form__column period">
-                                <div class="contact-form__input-wrapper">
-                                    <div class="contact-form__input-wrapper-header">
-                                        <h5>Il tuo soggiorno</h5>
-                                    </div>
-
-                                    <div class="form-col form-col--arrive">
-                                        <div class="book_item">
-                                            <label for="contact-form-arrive">Arrivo *</label>
-                                            <div class="input-container">
-                                                <i class="far fa-calendar-check icon"></i>
-                                                <input class="range checkin" id="contact-form-arrive" name="checkin" type="text" data-w-email="checkin" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-col form-col--departure">
-                                        <div class="book_item">
-                                            <label for="contact-form-arrive">Partenza *</label>
-                                            <div class="input-container">
-                                                <i class="far fa-calendar-times icon"></i>
-                                                <input class="range checkout" id="contact-form-departure" name="checkout" type="text"  data-w-email="checkout" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-col form-col--adults">
-                                        <div class="book_item">
-                                            <label for="contact-form-adults">Adulti *</label>
-                                            <div class="input-container">
-                                                <i class="fas fa-users icon"></i>
-                                                <input id="contact-form-adults" max="10" min="1" name="adults" type="number" data-w-email="adults" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-col form-col--childs">
-                                        <div class="book_item">
-                                            <label for="contact-form-childs">Bambini</label>
-                                            <div class="input-container">
-                                                <i class="fas fa-child icon"></i>
-                                                <input class="child_num_input" id="contact-form-childs" max="3" min="0" name="children"
-                                                        type="number" data-w-email="children">
-                                            </div>
+                                <div class="form-col form-col--surname">
+                                    <div class="book_item">
+                                        <label for="contact-form-surname">Cognome</label>
+                                        <div class="input-container">
+                                            <i class="far fa-user icon"></i>
+                                            <input data-w-email="last_name" id="contact-form-surname" name="last_name" type="text">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-
-                            <div class="col-lg-4 contact-form__column">
-                                <div class="contact-form__input-wrapper">
-                                    <div class="contact-form__input-wrapper-header">
-                                        <h5>Trattamento e richieste</h5>
-                                    </div>
-
-                                    <div class="form-col form-col--reservation-type">
-                                        <div class="book_item">
-                                            <label for="contact-form-type">Sistemazione</label>
-
-                                            <div class="input-group input-group-lg">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" style="background: #218d96; border: none; border-radius: 0; color: white;">
-                                                        <i class="fas fa-bed"></i>
-                                                    </span>
-                                                </div>
-
-                                                <select class="form-control" id="contact-form-type" name="room">
-                                                    <option>Scegli l'opzione...</option>
-                                                    <option>Camera singola</option>
-                                                    <option>Camera doppia</option>
-                                                    <option>Camera matrimoniale</option>
-                                                    <option>Matrimoniale + 1 letto</option>
-                                                    <option>Matrimoniale + 2 letti</option>
-                                                    <option>Matrimoniale + 3 letti</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-col form-col--reservation-type">
-                                        <div class="book_item">
-                                            <label for="contact-form-reservation-type">Trattamento</label>
-
-                                            <div class="input-group input-group-lg">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" style="background: #218d96; border: none; border-radius: 0; color: white;">
-                                                        <i class="fas fa-umbrella-beach"></i>
-                                                    </span>
-                                                </div>
-
-                                                <select class="form-control" id="contact-form-reservation-type" name="accomodation">
-                                                    <option>Scegli l'opzione...</option>
-                                                    <option>All inclusive</option>
-                                                    <option>Pensione completa</option>
-                                                    <option>Mezza pensione</option>
-                                                    <option>B&amp;B</option>
-                                                    <option>Solo pernottamento</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-col form-col--msg">
-                                        <div class="book_item">
-                                            <label for="message">Messaggio</label>
-
-                                            <div class="input-group input-group-lg">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" style="background: #218d96; border: none; border-radius: 0; color: white;">
-                                                        <i class="fas fa-comment-alt"></i>
-                                                    </span>
-                                                </div>
-
-                                                <textarea class="form-control" id="message" name="_form[extra][message]" required rows="4" data-w-email="message"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="book_item form-col--privacy">
-                                        <input class="form-check-input" id="privacy" required type="checkbox" value="">
-                                        <label class="form-check-label" for="privacy">
-                                            Acconsento al trattamento dei dati forniti per le finalità indicate dall\'informativa sulla
-
-                                            <a href="/privacy-policy" target="_blank">Privacy Policy</a>
-                                        </label>
-                                    </div>
-
-
-                                    <div class="form-col form-col--action">
-                                        <div class="book_item text-center">
-                                            <button class="btn btn-white submit" type="submit">Richiedi preventivo</button>
+                                <div class="form-col form-col--phone">
+                                    <div class="book_item">
+                                        <label for="contact-form-phone">Telefono</label>
+                                        <div class="input-container">
+                                            <i class="fas fa-phone icon"></i>
+                                            <input data-w-email="telephone" id="contact-form-phone" name="_form[extra][telephone]" type="text">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="col-12">
-                                <div class="w-error alert alert-danger text-center display-none">
+                                <div class="form-col form-col--email">
+                                    <div class="book_item">
+                                        <label for="contact-form-email">Email *</label>
+                                        <div class="input-container">
+                                            <i class="fas fa-envelope icon"></i>
+                                            <input data-w-email="email" id="contact-form-email" name="email"
+                                                    required type="email">
+                                        </div>
+                                    </div>
 
-                                </div>
-                                <div class="w-success alert alert-success text-center display-none">
-
+                                    <div class="_the_email_confirm_group">
+                                        <div class="form-group">
+                                            <label class="upper" for="name">Email confirm</label>
+                                            <input class="_the_email_confirm_" name="_the_email_confirm_" type="text" value="confirmed"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
+                        <div class="col-lg-4 contact-form__column period">
+                            <div class="contact-form__input-wrapper">
+                                <div class="contact-form__input-wrapper-header">
+                                    <h5>Il tuo soggiorno</h5>
+                                </div>
+
+                                <div class="form-col form-col--arrive">
+                                    <div class="book_item">
+                                        <label for="contact-form-arrive">Arrivo *</label>
+                                        <div class="input-container">
+                                            <i class="far fa-calendar-check icon"></i>
+                                            <input class="range checkin" data-w-email="checkin" id="contact-form-arrive" name="checkin" required type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-col form-col--departure">
+                                    <div class="book_item">
+                                        <label for="contact-form-arrive">Partenza *</label>
+                                        <div class="input-container">
+                                            <i class="far fa-calendar-times icon"></i>
+                                            <input class="range checkout" data-w-email="checkout" id="contact-form-departure" name="checkout" required type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-col form-col--adults">
+                                    <div class="book_item">
+                                        <label for="contact-form-adults">Adulti *</label>
+                                        <div class="input-container">
+                                            <i class="fas fa-users icon"></i>
+                                            <input data-w-email="adults" id="contact-form-adults" max="10" min="1" name="adults" required type="number">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-col form-col--childs">
+                                    <div class="book_item">
+                                        <label for="contact-form-childs">Bambini</label>
+                                        <div class="input-container">
+                                            <i class="fas fa-child icon"></i>
+                                            <input class="child_num_input" data-w-email="children" id="contact-form-childs" max="3" min="0"
+                                                    name="children" type="number">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4 contact-form__column">
+                            <div class="contact-form__input-wrapper">
+                                <div class="contact-form__input-wrapper-header">
+                                    <h5>Trattamento e richieste</h5>
+                                </div>
+
+                                <div class="form-col form-col--reservation-type">
+                                    <div class="book_item">
+                                        <label for="contact-form-type">Sistemazione</label>
+
+                                        <div class="input-group input-group-lg">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" style="background: #218D96; border: none; border-radius: 0; color: white;">
+                                                    <i class="fas fa-bed"></i>
+                                                </span>
+                                            </div>
+
+                                            <select class="form-control" id="contact-form-type" name="room">
+                                                <option>Scegli l'opzione...</option>
+                                                <option>Camera singola</option>
+                                                <option>Camera doppia</option>
+                                                <option>Camera matrimoniale</option>
+                                                <option>Matrimoniale + 1 letto</option>
+                                                <option>Matrimoniale + 2 letti</option>
+                                                <option>Matrimoniale + 3 letti</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-col form-col--reservation-type">
+                                    <div class="book_item">
+                                        <label for="contact-form-reservation-type">Trattamento</label>
+
+                                        <div class="input-group input-group-lg">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" style="background: #218D96; border: none; border-radius: 0; color: white;">
+                                                    <i class="fas fa-umbrella-beach"></i>
+                                                </span>
+                                            </div>
+
+                                            <select class="form-control" id="contact-form-reservation-type" name="accomodation">
+                                                <option>Scegli l'opzione...</option>
+                                                <option>All inclusive</option>
+                                                <option>Pensione completa</option>
+                                                <option>Mezza pensione</option>
+                                                <option>B&amp;B</option>
+                                                <option>Solo pernottamento</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-col form-col--msg">
+                                    <div class="book_item">
+                                        <label for="message">Messaggio</label>
+
+                                        <div class="input-group input-group-lg">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" style="background: #218D96; border: none; border-radius: 0; color: white;">
+                                                    <i class="fas fa-comment-alt"></i>
+                                                </span>
+                                            </div>
+
+                                            <textarea class="form-control" data-w-email="message" id="message" name="_form[extra][message]" required rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="book_item form-col--privacy">
+                                    <input class="form-check-input" id="privacy" required type="checkbox" value="">
+                                    <label class="form-check-label" for="privacy">
+                                        Acconsento al trattamento dei dati forniti per le finalità indicate dall\'informativa sulla
+
+                                        <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+                                    </label>
+                                </div>
+
+
+                                <div class="form-col form-col--action">
+                                    <div class="book_item text-center">
+                                        <button class="btn btn-white submit" type="submit">Richiedi preventivo</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="w-error alert alert-danger text-center display-none">
+
+                            </div>
+                            <div class="w-success alert alert-success text-center display-none">
+
+                            </div>
+                        </div>
                     </div>
-                </form>
+                </div>
+            </form>
+            </section>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">API</h1>
+            </div>
+
+            <div class="col-9 center-block">
+                <h2><code>POST</code> v01 - Email and form data submit {json}</h2>
+
+                <code>{{domain}}/api/v01/email/form/submit</code>
+                <p class="text-gray">Send an email with all form data for save it and send email to tenant access_token user</p>
+
+                <div class="mb-50">
+                    <h4 class="pm-h4 auth-label"> Authorization <span class="auth-type">Bearer Token</span></h4>
+                    <table class="pm-table docs-request-table">
+                        <tbody>
+                        <tr class="">
+                            <td class="weight--medium">token</td>
+                            <td>{{API_KEY}}
+                                <div class="pm-markdown docs-request-table__desc"></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mb-50">
+                    <h4 class="pm-h4">Headers</h4>
+
+                    <table class="pm-table docs-request-table">
+                        <tbody>
+                        <tr class="">
+                            <td class="weight--medium">X-Lang</td>
+                            <td>{{X-Lang}}
+                                <div class="pm-markdown docs-request-table__desc"></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="">
+                    <h4 class="pm-h4 docs-request-body__title">Body <span class="text-gray">formdata</span></h4>
+
+                    <table class="table table-bordered table-hover table-striped">
+                            <tbody>
+                            <tr class="">
+                                <td class="weight--medium">checkin</td>
+                                <td>25/08/2019
+                                    <div class="pm-markdown docs-request-table__desc">
+                                        <p>(string) Checkin date Italian format dd/mm/YYYY</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">checkout</td>
+                                <td>30/08/2019
+                                    <div class="pm-markdown docs-request-table__desc">
+                                        <p>(string) Checkout date Italian format dd/mm/YYYY</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">email</td>
+                                <td>withartur@gmail.com
+                                    <div class="pm-markdown docs-request-table__desc"><p>(string) Email of sender</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">first_name</td>
+                                <td>Artur
+                                    <div class="pm-markdown docs-request-table__desc"><p>(string) First name of sender</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">last_name</td>
+                                <td>Postman
+                                    <div class="pm-markdown docs-request-table__desc"><p>(string) Last name of sender</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">_form[extra][message]</td>
+                                <td>TEST with Postman
+                                    <div class="pm-markdown docs-request-table__desc"><p>(string)[optional] TEXT of form request</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">_form[extra][telephone]</td>
+                                <td>1234567
+                                    <div class="pm-markdown docs-request-table__desc"><p>(string)[optional] TEXT of form request</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">adults</td>
+                                <td>2
+                                    <div class="pm-markdown docs-request-table__desc"><p>(integer)[optional] Adults number</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">children</td>
+                                <td>2
+                                    <div class="pm-markdown docs-request-table__desc"><p>(integer)[optional] Children number</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">children_age</td>
+                                <td>3,6
+                                    <div class="pm-markdown docs-request-table__desc"><p>(string)[optional] Children age</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">type_id</td>
+                                <td>
+                                    <div class="pm-markdown docs-request-table__desc">
+                                        <p>(integer)[optional] Id of the form data request type (1 - Camping, 2 - Village, 3 - )</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">lang_code</td>
+                                <td>it
+                                    <div class="pm-markdown docs-request-table__desc">
+                                        <p>(string)[optional] ISO locale of form_data language (for response lang set X-Lang header)</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">_email[to_email]</td>
+                                <td>artur@buonsito.it
+                                    <div class="pm-markdown docs-request-table__desc">
+                                        <p>(string)[optional] Email to which send (if diferent from the owner of acces_token an carbon copy will be sent to the owner also)</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">_email[to_name]</td>
+                                <td>Buonsito
+                                    <div class="pm-markdown docs-request-table__desc">
+                                        <p>(string)[optional] Name to which send (if to_email/to_name are ommitted the one of owner of access token will be used)</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">_email[subject]</td>
+                                <td>Custom subject of email (v1)
+                                    <div class="pm-markdown docs-request-table__desc">
+                                        <p>(string)[optional] Default is: Preventivo richiesto da/Estimate request from :name - :to_name :from_name - :to_name</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">_email[extra][template]</td>
+                                <td>forms.simple_html.base
+                                    <div class="pm-markdown docs-request-table__desc">
+                                        <p>(string)[optional] Template to use for send email default is: forms.simple_html.base</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">_email[extra][quote_structures]</td>
+                                <td>2
+                                    <div class="pm-markdown docs-request-table__desc">
+                                        <p>[Custom] filed make sense only with campingenatura template</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="weight--medium">verbose</td>
+                                <td>true
+                                    <div class="pm-markdown docs-request-table__desc">
+                                        <p>(bool)[optional] Get the Exception message when debug an error</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
 
     <div class="row mt-200">
