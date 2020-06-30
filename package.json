@@ -1,0 +1,28 @@
+{
+  "name": "w-email",
+  "version": "1.1.2",
+  "description": "Helper for Send email with jQuery and Bootstrap (trough API by default)",
+  "dependencies": {
+    "withfront": "^1.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturmamedov/w-email.git"
+  },
+  "keywords": [
+    "email",
+    "api",
+    "jquery",
+    "bootstrap"
+  ],
+  "author": "Artur Mamedov <arturmamedov1993@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arturmamedov/w-email/issues"
+  },
+  "homepage": "https://github.com/arturmamedov/w-email#readme"
+}
