@@ -5,7 +5,7 @@
   "main": "js/w-email.js",
   "style": "css/style.css",
   "dependencies": {
-    "withfront": "^1.5.3"
+    "withfront": "^1.5.8"
   },
   "devDependencies": {},
   "scripts": {
