@@ -3,6 +3,11 @@
     display: none !important;
 }
 
+/* no show by default */
+.w-error, .w-success {
+    display: none;
+}
+
 .contact-section {
     /* &::after {
       content: '';
