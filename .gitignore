@@ -39,6 +39,7 @@ nb-configuration.xml
 *.csscomb.json
 
 # Nodejs NPM & Logs
+package-lock.json
 logs
 *.log
 npm-debug.log*
