@@ -70,6 +70,16 @@ $(function () {
                             clog('ga send pageview: ' + _Form.data('gaSendPageview'))
                         }
                     }
+                    if (typeof gtag !== "undefined" && _Form.data('gaSendPageview') != 'off') {
+                      gtag('event', 'form_contatti', {
+                        value: 20,
+                        currency: "EUR"
+                      });
+
+                      if (typeof clog == 'function') {
+                        clog('ga send pageview: ' + _Form.data('gaSendPageview'))
+                      }
+                    }
 
                     // Facebook track (custom of this installation)
                     if (typeof clog == 'function') {
