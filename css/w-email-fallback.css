@@ -1,0 +1,53 @@
+/*
+ * w-email — framework-free fallback status UI
+ * ------------------------------------------------------------------
+ * Styles the widget's OWN status/validation elements so they look
+ * acceptable WITHOUT Bootstrap or FontAwesome. Load this AFTER the
+ * widget markup (e.g. after css/style.css in <head>).
+ *
+ * IMPORTANT: keep `display: none` here WITHOUT `!important` so the
+ * widget's reveal wins. Under jQuery the widget calls .show() (inline
+ * display); the vanilla port sets `el.style.display = 'block'`. An
+ * `!important` here — or a `display:none !important` utility class such
+ * as withfront's `display-none` on the same div — would prevent the
+ * success/error panel from ever appearing. Remove such classes from the
+ * .w-error / .w-success divs and rely on the rule below.
+ */
+
+/* Status panels — hidden until the widget reveals them on submit. */
+.w-error,
+.w-success {
+    display: none;
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.w-error {
+    color: #721c24;
+    background: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.w-success {
+    color: #155724;
+    background: #d4edda;
+    border-color: #c3e6cb;
+}
+
+/* Per-field validation. The widget adds `.has-error` to the invalid
+   field's parent wrapper and injects a `.help-block` error message. */
+.has-error input,
+.has-error select,
+.has-error textarea {
+    border: 1px solid #dc3545;
+}
+
+.help-block {
+    display: block;
+    margin-top: 0.25rem;
+    color: #dc3545;
+    font-size: 0.875rem;
+}
