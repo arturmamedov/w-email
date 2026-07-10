@@ -1,0 +1,81 @@
+/**
+ * w-email-fallback.css
+ *
+ * Minimal, dependency-free styles for the withEmail widget. The jQuery version
+ * relied on jQuery's .hide()/.show() and on Bootstrap classes (.alert,
+ * .has-error, .help-block) for its feedback UI. Now that js/w-email.js is
+ * vanilla and toggles visibility with inline `display`, a host page that drops
+ * in the widget without Bootstrap needs these baseline rules so the widget
+ * still works and reads correctly.
+ *
+ * IMPORTANT: .w-error / .w-success are hidden here WITHOUT `!important` so the
+ * widget can reveal them with an inline `style="display:block"`. Do not add
+ * `!important` (or a display:none-!important utility class) to those elements.
+ */
+
+/* Honey-pot spam trap: kept out of view (JS also hides it and clears the value). */
+._the_email_confirm_group {
+    display: none !important;
+}
+
+/* Feedback blocks: hidden by default, revealed by the widget via inline display. */
+.w-error,
+.w-success {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.w-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.w-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+/* Per-field validation state applied by the widget on the field's parent. */
+.has-error input,
+.has-error select,
+.has-error textarea {
+    border-color: #dc3545;
+}
+
+.has-error label {
+    color: #dc3545;
+}
+
+/* Inline per-field error message inserted after the field's parent. */
+.help-block {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #721c24;
+}
+
+/* Basic alert styling so error/success text is legible even without Bootstrap.
+   Real Bootstrap/withFront rules (if loaded) will take precedence via specificity. */
+.w-email .alert,
+.help-block.alert {
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}

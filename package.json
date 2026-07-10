@@ -1,7 +1,7 @@
 {
   "name": "withemail",
   "version": "1.1.4",
-  "description": "Helper for Send email with jQuery and Bootstrap (trough API by default)",
+  "description": "Dependency-free (vanilla JS) helper for Send email (trough API by default)",
   "main": "js/w-email.js",
   "style": "css/style.css",
   "dependencies": {
