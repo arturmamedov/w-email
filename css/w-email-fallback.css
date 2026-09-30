@@ -1,53 +1,83 @@
-/*
- * w-email — framework-free fallback status UI
- * ------------------------------------------------------------------
- * Styles the widget's OWN status/validation elements so they look
- * acceptable WITHOUT Bootstrap or FontAwesome. Load this AFTER the
- * widget markup (e.g. after css/style.css in <head>).
+/**
+ * w-email-fallback.css
  *
- * IMPORTANT: keep `display: none` here WITHOUT `!important` so the
- * widget's reveal wins. Under jQuery the widget calls .show() (inline
- * display); the vanilla port sets `el.style.display = 'block'`. An
- * `!important` here — or a `display:none !important` utility class such
- * as withfront's `display-none` on the same div — would prevent the
- * success/error panel from ever appearing. Remove such classes from the
- * .w-error / .w-success divs and rely on the rule below.
+ * Minimal, dependency-free styles for the withEmail widget. The jQuery version
+ * relied on jQuery's .hide()/.show() and on Bootstrap classes (.alert,
+ * .has-error, .help-block) for its feedback UI. Now that js/w-email.js is
+ * vanilla and toggles visibility with inline `display`, a host page that drops
+ * in the widget without Bootstrap needs these baseline rules so the widget
+ * still works and reads correctly.
+ *
+ * IMPORTANT: .w-error / .w-success are hidden here WITHOUT `!important` so the
+ * widget can reveal them with an inline `style="display:block"`. Do not add
+ * `!important` (or a display:none-!important utility class) to those elements.
+ * In particular, remove withfront's `display-none` class from the .w-error /
+ * .w-success divs and rely on the rule below instead.
  */
 
-/* Status panels — hidden until the widget reveals them on submit. */
+/* Honey-pot spam trap: kept out of view (JS also hides it and clears the value). */
+._the_email_confirm_group {
+    display: none !important;
+}
+
+/* Feedback blocks: hidden by default, revealed by the widget via inline display. */
 .w-error,
 .w-success {
     display: none;
-    margin: 1rem 0;
-    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
     border: 1px solid transparent;
-    border-radius: 4px;
-    text-align: center;
+    border-radius: 0.25rem;
 }
 
 .w-error {
     color: #721c24;
-    background: #f8d7da;
+    background-color: #f8d7da;
     border-color: #f5c6cb;
 }
 
 .w-success {
     color: #155724;
-    background: #d4edda;
+    background-color: #d4edda;
     border-color: #c3e6cb;
 }
 
-/* Per-field validation. The widget adds `.has-error` to the invalid
-   field's parent wrapper and injects a `.help-block` error message. */
+/* Per-field validation state applied by the widget on the field's parent. */
 .has-error input,
 .has-error select,
 .has-error textarea {
-    border: 1px solid #dc3545;
+    border-color: #dc3545;
 }
 
+.has-error label {
+    color: #dc3545;
+}
+
+/* Inline per-field error message inserted after the field's parent. */
 .help-block {
     display: block;
     margin-top: 0.25rem;
-    color: #dc3545;
-    font-size: 0.875rem;
+    font-size: 0.875em;
+    color: #721c24;
+}
+
+/* Basic alert styling so error/success text is legible even without Bootstrap.
+   Real Bootstrap/withFront rules (if loaded) will take precedence via specificity. */
+.w-email .alert,
+.help-block.alert {
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
 }

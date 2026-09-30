@@ -20,6 +20,9 @@
     <!-- This theme style -->
     <link href="/css/style.css" rel="stylesheet">
 
+    <!-- w-email dependency-free fallback styles (honeypot, .w-error/.w-success, .has-error/.help-block) -->
+    <link href="/css/w-email-fallback.css" rel="stylesheet">
+
     <!-- w-front (withFront) tools -->
     <link href="/node_modules/withfront/dist/css/w-style.min.css" rel="stylesheet">
 </head>
@@ -113,7 +116,7 @@
                                         <label for="contact-form-arrive">Arrivo *</label>
                                         <div class="input-container">
                                             <i class="far fa-calendar-check icon"></i>
-                                            <input class="range checkin" data-w-email="checkin" id="contact-form-arrive" name="checkin" required type="text">
+                                            <input class="range checkin" data-w-email="checkin" id="contact-form-arrive" name="checkin" required type="date">
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +126,7 @@
                                         <label for="contact-form-arrive">Partenza *</label>
                                         <div class="input-container">
                                             <i class="far fa-calendar-times icon"></i>
-                                            <input class="range checkout" data-w-email="checkout" id="contact-form-departure" name="checkout" required type="text">
+                                            <input class="range checkout" data-w-email="checkout" id="contact-form-departure" name="checkout" required type="date">
                                         </div>
                                     </div>
                                 </div>
@@ -240,10 +243,10 @@
                         </div>
 
                         <div class="col-12">
-                            <div class="w-error alert alert-danger text-center display-none">
+                            <div class="w-error alert alert-danger text-center">
 
                             </div>
-                            <div class="w-success alert alert-success text-center display-none">
+                            <div class="w-success alert alert-success text-center">
 
                             </div>
                         </div>
@@ -454,15 +457,12 @@
 
 
 <!-- @html5bp <script src="js/vendor/modernizr-3.6.0.min.js"></script>-->
-<script crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>window.jQuery || document.write('<script src="/node_modules/jquery/dist/jquery.min.js"><\/script>')</script>
+<!-- w-email itself is now dependency-free (vanilla JS). jQuery is still bundled below
+     via withFront's libraries.min.js, which the demo theme/plugins rely on. -->
 
 <!-- Plugin with that withFront works -->
 <script src="/node_modules/withfront/dist/js/libraries.min.js"></script> <!-- grunt uglify:libraries | for conf -->
-<!-- Bs Date Picker https://github.com/uxsolutions/bootstrap-datepicker -->
-<!--<link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css"/> yet in dist/css/libraries.min.css
-<script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> yet in dist/js/libraries.min.js -->
-<script data-lang="it" id="bsdp_lang_code" src="/node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.it.min.js"></script>
+<!-- Date fields are now native <input type="date">; bootstrap-datepicker is no longer needed. -->
 
 <!-- js-cookie https://github.com/js-cookie/js-cookie -->
 <!--<script src="node_modules/js-cookie/src/js.cookie.js"></script> yet in dist/js/libraries.min.js -->
